@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedido de Casamento</title>
+    <style>
+        body {
+            background-image: url('fundo.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            position: relative;
+            background: rgba(0, 0, 0, 0.5); /* Adiciona uma leve transparência ao fundo para melhorar a legibilidade */
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        .button {
+            background-color: #ff69b4;
+            border: none;
+            color: white;
+            padding: 15px 30px;
+            font-size: 20px;
+            cursor: pointer;
+            border-radius: 10px;
+            margin: 0 10px; /* Ajusta o espaço entre os botões */
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .button:hover {
+            background-color: #ff1493;
+        }
+        #no-button {
+            position: relative;
+            transition: transform 0.3s, opacity 0.3s;
+        }
+        #no-button.hidden {
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Querida Maria Gabrielly de Souza,</h1>
+        <p>Eu te amo muito e quero passar o resto da minha vida com você. Aceita casar comigo?</p>
+        <div class="buttons">
+            <a href="sim.html" class="button">Sim</a>
+            <button id="no-button" class="button" disabled>Não</button>
+        </div>
+    </div>
+    <script>
+        const noButton = document.getElementById('no-button');
+
+        document.addEventListener('mousemove', (e) => {
+            const rect = noButton.getBoundingClientRect();
+            const buttonX = rect.left + rect.width / 2;
+            const buttonY = rect.top + rect.height / 2;
+
+            const distance = Math.sqrt(
+                Math.pow(e.clientX - buttonX, 2) +
+                Math.pow(e.clientY - buttonY, 2)
+            );
+
+            if (distance < 100) { // Ajuste a distância para que o botão desapareça quando o mouse estiver a 100px de distância
+                noButton.classList.add('hidden');
+            } else {
+                noButton.classList.remove('hidden');
+            }
+        });
+    </script>
+</body>
+</html>
