@@ -1,0 +1,74 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+    background: url('fundo-romantico.jpg') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden; /* Evita a rolagem da página */
+}
+
+.container {
+    text-align: center;
+    background: rgba(0, 0, 0, 0.7); /* Fundo semi-transparente para melhor contraste */
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    margin-bottom: 30px;
+    color: #fff;
+    line-height: 1.2;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.button {
+    display: inline-block;
+    padding: 15px 30px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.25rem;
+    border-radius: 30px;
+    transition: background-color 0.3s, opacity 0.3s, transform 0.3s;
+    position: relative;
+    overflow: hidden;
+    font-weight: 700;
+}
+
+.sim {
+    background-color: #4CAF50; /* Verde para "Sim" */
+}
+
+.sim:hover {
+    background-color: #45a049; /* Verde escuro ao passar o mouse */
+}
+
+.nao {
+    background-color: #f44336; /* Vermelho para "Não" */
+}
+
+.nao:hover {
+    background-color: #d32f2f; /* Vermelho escuro ao passar o mouse */
+}
+
+.nao.hidden {
+    opacity: 0; /* Invisível quando a classe 'hidden' é adicionada */
+    transform: scale(0.9); /* Faz o botão parecer encolher quando desaparece */
+}
